@@ -18,6 +18,8 @@ export const getCurrentUser = async (req, res) => {
 
 export const updateAssistant = async(req,res)=>{
     try {
+        console.log(req.body);
+console.log(req.file);
         const {assistantName,imageUrl}=req.body
         let assistantImage;
         if(req.file){
@@ -30,8 +32,11 @@ export const updateAssistant = async(req,res)=>{
         },{new:true}).select("-password")
         return res.status(200).json(user)
     } catch (error) {
-        return res.status(200).json({message:"Update Assistant Error"})
-    }
+    console.log(error);
+    return res.status(500).json({
+        message: error.message
+    });
+}   
 }
 
 export const  askToAssistant = async (req,res)=>{
