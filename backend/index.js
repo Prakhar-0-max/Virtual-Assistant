@@ -12,7 +12,7 @@ import geminiResponse from "./gemini.js"
 const app=express()
 app.use(cors({
     origin: ["http://localhost:5173",
-      "https://your-netlify-app.netlify.app"],
+      "https://stalwart-quokka-38000f.netlify.app/signup"],
     credentials:true
 }))
 const port = process.env.PORT || 8000;

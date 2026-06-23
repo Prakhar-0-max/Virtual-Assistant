@@ -30,10 +30,11 @@ const SignIn = () => {
        
     } catch (error) {
        toast.error('Login  Failed');
+       
       console.log(error)
       setUserData(null)
        setLoading(false)
-      setErr(error.response.data.message)
+      setErr(error?.response?.data?.message || error.message)
     }
   }
   return (
