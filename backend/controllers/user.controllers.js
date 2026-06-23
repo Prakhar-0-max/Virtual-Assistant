@@ -16,6 +16,9 @@ export const getCurrentUser = async (req, res) => {
     }
 }
 export const updateAssistant = async(req,res)=>{
+    console.log("BODY:", req.body);
+console.log("FILE:", req.file);
+console.log("USERID:", req.userId);
     try {
         console.log("BODY:", req.body);
         console.log("FILE:", req.file);
