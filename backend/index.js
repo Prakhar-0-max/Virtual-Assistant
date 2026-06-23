@@ -11,10 +11,11 @@ import geminiResponse from "./gemini.js"
 
 const app=express()
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin: ["http://localhost:5173",
+      "https://your-netlify-app.netlify.app"],
     credentials:true
 }))
-const port = process.env.PORT 
+const port = process.env.PORT || 8000;
 app.use(express.json())
 app.use(cookieParser())
 
