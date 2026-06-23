@@ -10,11 +10,7 @@ import userRouter from "./routes/userRoutes.js"
 import geminiResponse from "./gemini.js"
 
 const app=express()
-app.use(cors({
-    origin: ["http://localhost:5173",
-      "https://stalwart-quokka-38000f.netlify.app"],
-    credentials:true
-}))
+app.use(cors())
 const port = process.env.PORT || 8000;
 app.use(express.json())
 app.use(cookieParser())
