@@ -61,7 +61,13 @@ export const  askToAssistant = async (req,res)=>{
         const userName=user.name
         const assistantName=user.assistantName
 
-        const result=await geminiResponse(command,assistantName,userName)
+  const result = await geminiResponse(command, assistantName, userName);
+
+if (!result) {
+    return res.status(500).json({
+        response: "Gemini API Error or Quota Exceeded"
+    });
+}
        
 
         const jsonMatch=result.match(/{[\s\S]*}/)
